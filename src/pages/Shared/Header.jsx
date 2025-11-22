@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import Logo from "./Logo";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -62,12 +62,12 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end flex gap-2">
-        <button className="btn btn-outline outline-primary font-bold hover:bg-primary hover:text-secondary">
+        <Link to={'/login'} className="btn btn-outline outline-primary font-bold hover:bg-primary hover:text-secondary">
           Sing In
-        </button>
-        <button className="btn bg-primary  text-secondary  font-bold">
+        </Link>
+        <Link to={'/registration'} className="btn bg-primary  text-secondary  font-bold">
           Sing Up
-        </button>
+        </Link>
         <button className=" p-2 bg-black rounded-full cursor-pointer">
           <FiArrowUpRight className="text-primary text-2xl" />
         </button>
