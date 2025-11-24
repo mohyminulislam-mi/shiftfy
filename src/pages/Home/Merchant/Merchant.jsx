@@ -1,6 +1,6 @@
 import React from "react";
-import topWave from "../assets/be-a-merchant-bg.png";
-import boxIllustration from "../assets/location-merchant.png";
+import topWave from "../../../assets/be-a-merchant-bg.png";
+import boxIllustration from "../../../assets/location-merchant.png";
 
 const Merchant = () => {
   return (

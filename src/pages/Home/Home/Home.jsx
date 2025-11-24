@@ -16,9 +16,9 @@ const Home = () => {
       <Hero />
       <div className="my-15"><HowWorks /></div>
       <div className="py-8 bg-secondary rounded-2xl"><OurServices /></div>
+      <div className="my-15"><Brands /></div>
       <div> <ServiceFeatures /> </div>
       <div> <Merchant /> </div>
-      <div className="my-15"><Brands /></div>
       <div className="my-15">
         <Suspense fallback={<Loading></Loading>}>
           <Reviews reviewsPromise={reviewsPromise} />

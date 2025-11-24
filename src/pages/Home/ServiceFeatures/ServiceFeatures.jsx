@@ -1,6 +1,6 @@
 import React from "react";
-import livePaking from "../assets/live-tracking.png";
-import deleviry from "../assets/safe-delivery.png";
+import livePaking from "../../../assets/live-tracking.png";
+import deleviry from "../../../assets/safe-delivery.png";
 
 const ServiceFeatures = () => {
   const features = [
