@@ -8,7 +8,6 @@ const Reviews = ({ reviewsPromise }) => {
   return (
     <div>
       <div>
-        <h1> {reviews.length} Loading</h1>
       </div>
       <>
         <Swiper

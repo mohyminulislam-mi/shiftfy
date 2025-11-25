@@ -94,11 +94,8 @@ const FAQ = () => {
         })}
       </div>
 
-      <button className="mt-10 bg-lime-300 hover:bg-lime-400 text-gray-900 px-7 sm:px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-md">
+      <button className="mt-10 bg-primary text-secondary cursor-pointer px-7 sm:px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-md">
         See More FAQ’s
-        <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black text-white flex items-center justify-center">
-          →
-        </span>
       </button>
     </section>
   );

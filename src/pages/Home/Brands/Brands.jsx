@@ -29,7 +29,7 @@ const Brands = () => {
   return (
     <div>
       <div>
-        <h1 className="text-center font-semibold pb-10 text-2xl text-secondary">We've helped thousands of sales teams</h1>
+        <h1 className="text-center font-semibold pb-16 text-3xl text-secondary">We've helped thousands of sales teams</h1>
       </div>
       <Swiper
         slidesPerView={4}

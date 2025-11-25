@@ -22,18 +22,21 @@ const ServiceFeatures = () => {
   ];
 
   return (
-    <section className="w-full py-16 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto">
+    <section className="w-full py-10 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto">
       <div className="border-t-2 border-dashed border-gray-400 mb-10"></div>
 
       <div className="flex flex-col gap-8">
         {features.map((item, i) => (
           <div
             key={i}
-            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-200 
-                       flex flex-col md:flex-row items-center md:items-start gap-6 
-                       hover:shadow-md transition-all"
+            className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 
+                       flex flex-col md:flex-row items-center md:items-start gap-6"
           >
-            <img src={item.icon} alt="" className="w-32 sm:w-40 mx-auto md:mx-0" />
+            <img
+              src={item.icon}
+              alt=""
+              className="w-32 sm:w-40 mx-auto md:mx-0"
+            />
 
             <div className="flex-1 text-center md:text-left">
               <h3 className="font-bold text-gray-800 text-lg sm:text-xl mb-2">
