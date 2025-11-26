@@ -1,6 +1,4 @@
 import React from "react";
-import Chart from "../../../components/Chart";
-import StatCard from "../../../components/StatCard";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -14,16 +12,20 @@ import Loading from "../../../Loading/Loading";
 const MyParcel = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const {isLoading, data: parcels = [], refetch } = useQuery({
+  const {
+    isLoading,
+    data: parcels = [],
+    refetch,
+  } = useQuery({
     queryKey: ["my-parcel", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/parcels?email=${user.email}`);
       return res.data;
     },
   });
-   if (isLoading) {
-        return <Loading />
-    }
+  if (isLoading) {
+    return <Loading />;
+  }
   const handleParcelDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -106,15 +108,6 @@ const MyParcel = () => {
           </tbody>
         </table>
       </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <StatCard title="To Pay" value="129" />
-        <StatCard title="Ready Pick UP" value="1,325" />
-        <StatCard title="In Transit" value="50" />
-        <StatCard title="Ready to Deliver" value="50" />
-        <StatCard title="Delivered" value="50" />
-      </div>
-      <Chart />
     </div>
   );
 };
