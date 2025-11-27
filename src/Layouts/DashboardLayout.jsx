@@ -9,7 +9,6 @@ import useAuth from "../hooks/useAuth";
 
 const DashboardLayout = () => {
   const { user } = useAuth();
-  console.log(user?.email);
 
   return (
     <div className="drawer lg:drawer-open">

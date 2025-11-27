@@ -6,7 +6,6 @@ import { IoSearchSharp } from "react-icons/io5";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
-import { Link } from "react-router";
 import Loading from "../../../Loading/Loading";
 
 const MyParcel = () => {
@@ -52,9 +51,20 @@ const MyParcel = () => {
       }
     });
   };
+  const handlePayment = async (parcel) => {
+    const paymentInfo = {
+      cost: parcel.cost,
+      parcelId: parcel._id,
+      senderEmail: parcel.senderEmail,
+      parcelName: parcel.parcelName
+    }
+    const res = await axiosSecure.post('/create-checkout-session', paymentInfo);
+    window.location.href = res.data.url;
+    console.log(res.data.url);
+    
+  }
   return (
     <div className="space-y-6">
-      <h1>my parcels {parcels.length}</h1>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           {/* head */}
@@ -77,15 +87,15 @@ const MyParcel = () => {
                 <td>{parcel.cost}</td>
                 <td>
                   {parcel.paymentStatus === "paid" ? (
-                    <span className="bg-green-100 text-green-600 py-1 px-1.5 rounded">
+                    <span className="bg-green-200 text-green-700 py-1 px-2 font-semibold rounded">
                       Paid
                     </span>
                   ) : (
-                    <Link to={`/dashboard/payment/${parcel._id}`}>
-                      <span className="text-white bg-red-600 py-1 px-1.5 rounded">
+                    
+                      <button onClick={()=> handlePayment(parcel)} className= " btn btn-sm text-white bg-red-600 py-1 px-1.5 rounded">
                         Pay now
-                      </span>
-                    </Link>
+                      </button>
+                    
                   )}
                 </td>
                 <td>{parcel.delivaryStatus}</td>
