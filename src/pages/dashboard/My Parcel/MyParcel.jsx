@@ -56,13 +56,12 @@ const MyParcel = () => {
       cost: parcel.cost,
       parcelId: parcel._id,
       senderEmail: parcel.senderEmail,
-      parcelName: parcel.parcelName
-    }
-    const res = await axiosSecure.post('/create-checkout-session', paymentInfo);
+      parcelName: parcel.parcelName,
+    };
+    const res = await axiosSecure.post("/create-checkout-session", paymentInfo);
     window.location.href = res.data.url;
     console.log(res.data.url);
-    
-  }
+  };
   return (
     <div className="space-y-6">
       <div className="overflow-x-auto">
@@ -91,11 +90,12 @@ const MyParcel = () => {
                       Paid
                     </span>
                   ) : (
-                    
-                      <button onClick={()=> handlePayment(parcel)} className= " btn btn-sm text-white bg-red-600 py-1 px-1.5 rounded">
-                        Pay now
-                      </button>
-                    
+                    <button
+                      onClick={() => handlePayment(parcel)}
+                      className=" btn btn-sm text-white bg-red-600 py-1 px-1.5 rounded"
+                    >
+                      Pay now
+                    </button>
                   )}
                 </td>
                 <td>{parcel.delivaryStatus}</td>

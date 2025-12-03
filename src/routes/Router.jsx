@@ -15,6 +15,7 @@ import PaymentSuccess from "../pages/dashboard/Payments/PaymentSuccess";
 import PaymentCancelled from "../pages/dashboard/Payments/PaymentCancelled";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/dashboard/Dashboard";
+import PaymentHistory from "../pages/dashboard/Payment History/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,7 @@ export const router = createBrowserRouter([
       { path: "/dashboard/payment/:parcelId", element: <Payment /> },
       { path: "/dashboard/payment-success", element: <PaymentSuccess /> },
       { path: "/dashboard/payment-cancelled", element: <PaymentCancelled /> },
+      { path: "/dashboard/payment-history", element: <PrivateRoute><PaymentHistory /></PrivateRoute> },
     ],
   },
 ]);

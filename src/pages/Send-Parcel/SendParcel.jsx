@@ -152,6 +152,7 @@ const SendParcel = () => {
               type="text"
               {...register("senderName")}
               defaultValue={user?.displayName}
+              readOnly
               className="input w-full"
               placeholder="Sender Name"
             />
@@ -162,6 +163,7 @@ const SendParcel = () => {
               type="text"
               {...register("senderEmail")}
               defaultValue={user?.email}
+              readOnly
               className="input w-full"
               placeholder="Sender Email"
             />
