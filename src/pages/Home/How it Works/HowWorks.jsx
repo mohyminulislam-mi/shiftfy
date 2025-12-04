@@ -32,8 +32,8 @@ const HowWorks = () => {
     <div className="max-w-6xl mx-auto space-y-5">
       <h1 className="text-secondary font-bold text-2xl">How it Works</h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-4 grid-cols-1 gap-6 items-center ">
-        {WorkData.map((work) => (
-          <div className="flex flex-col items-center bg-white rounded-xl p-4.5">
+        {WorkData.map((work, index) => (
+          <div key={index} className="flex flex-col items-center bg-white rounded-xl p-4.5">
             <span className="text-4xl">{work.icon}</span>
             <h1 className="my-4 font-bold">{work.title}</h1>
             <p>{work.description}</p>

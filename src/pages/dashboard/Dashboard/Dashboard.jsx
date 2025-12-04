@@ -1,6 +1,6 @@
 import React from "react";
-import StatCard from "../../components/StatCard";
-import Chart from "../../components/Chart";
+import StatCard from "../../../components/StatCard";
+import Chart from "../../../components/Chart";
 
 const Dashboard = () => {
   return (

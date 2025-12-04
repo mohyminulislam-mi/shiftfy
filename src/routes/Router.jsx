@@ -14,8 +14,8 @@ import Payment from "../pages/dashboard/Payments/Payment";
 import PaymentSuccess from "../pages/dashboard/Payments/PaymentSuccess";
 import PaymentCancelled from "../pages/dashboard/Payments/PaymentCancelled";
 import PrivateRoute from "./PrivateRoute";
-import Dashboard from "../pages/dashboard/Dashboard";
 import PaymentHistory from "../pages/dashboard/Payment History/PaymentHistory";
+import Dashboard from "../pages/dashboard/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +36,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/send-parcel",
-        element: <PrivateRoute><SendParcel /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <SendParcel />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/serviceCenters.json").then((res) => res.json()),
       },
       {
@@ -66,14 +70,25 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
     children: [
       { path: "/dashboard", element: <Dashboard /> },
       { path: "/dashboard/My-Parcel", element: <MyParcel /> },
       { path: "/dashboard/payment/:parcelId", element: <Payment /> },
       { path: "/dashboard/payment-success", element: <PaymentSuccess /> },
       { path: "/dashboard/payment-cancelled", element: <PaymentCancelled /> },
-      { path: "/dashboard/payment-history", element: <PrivateRoute><PaymentHistory /></PrivateRoute> },
+      {
+        path: "/dashboard/payment-history",
+        element: (
+          <PrivateRoute>
+            <PaymentHistory />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
