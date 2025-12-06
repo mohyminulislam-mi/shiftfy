@@ -5,11 +5,12 @@ import { FaBoxOpen, FaHistory, FaUsers } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { BsLayoutTextSidebar } from "react-icons/bs";
 import useAuth from "../hooks/useAuth";
+import useRole from "../hooks/useRole";
 import { MdDirectionsBike } from "react-icons/md";
-
 
 const DashboardLayout = () => {
   const { user } = useAuth();
+  const { role } = useRole();
 
   return (
     <div className="drawer lg:drawer-open">
@@ -133,7 +134,7 @@ const DashboardLayout = () => {
                 className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                 data-tip="My Parcel"
               >
-                {/* Settings icon */}
+                {/* My Parcel */}
                 <FaBoxOpen />
                 <span className="is-drawer-close:hidden">My Parcel</span>
               </NavLink>
@@ -144,31 +145,50 @@ const DashboardLayout = () => {
                 className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                 data-tip="Payment History"
               >
-                {/* Settings icon */}
+                {/* Payment History */}
                 <FaHistory />
                 <span className="is-drawer-close:hidden">Payment History</span>
               </NavLink>
             </li>
-            <li>
+            {role === "admin" && (
+              <>
+                <li>
+                  <NavLink
+                    to="/dashboard/approve-riders"
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="Approve Riders"
+                  >
+                    {/* Approve Riders*/}
+                    <MdDirectionsBike />
+                    <span className="is-drawer-close:hidden">
+                      Approve Riders
+                    </span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/user-management"
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="User Management"
+                  >
+                    {/*User Management */}
+                    <FaUsers />
+                    <span className="is-drawer-close:hidden">
+                      User Management
+                    </span>
+                  </NavLink>
+                </li>
+              </>
+            )}
+             <li>
               <NavLink
-                to="/dashboard/approve-riders"
+                to="/dashboard/setting"
                 className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="Approve Riders"
+                data-tip="Setting"
               >
-                {/* Settings icon */}
-                <MdDirectionsBike />
-                <span className="is-drawer-close:hidden">Approve Riders</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/user-management"
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="User Management"
-              >
-                {/* Settings icon */}
-                <FaUsers />
-                <span className="is-drawer-close:hidden">User Management</span>
+                {/* Setting */}
+                <IoSettingsSharp />
+                <span className="is-drawer-close:hidden">Setting</span>
               </NavLink>
             </li>
           </ul>

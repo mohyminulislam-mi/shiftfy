@@ -18,6 +18,8 @@ import PaymentHistory from "../pages/dashboard/Payment History/PaymentHistory";
 import Dashboard from "../pages/dashboard/Dashboard/Dashboard";
 import ApproveRiders from "../pages/Rider/ApproveRiders";
 import UserManagement from "../pages/dashboard/User Management/UserManagement";
+import AdminRoutes from "./AdminRoutes";
+// import Forbidden from "../components/Forbidden";
 
 export const router = createBrowserRouter([
   {
@@ -84,21 +86,25 @@ export const router = createBrowserRouter([
       { path: "/dashboard/payment/:parcelId", element: <Payment /> },
       { path: "/dashboard/payment-success", element: <PaymentSuccess /> },
       { path: "/dashboard/payment-cancelled", element: <PaymentCancelled /> },
-      { path: "/dashboard/approve-riders", element: <ApproveRiders /> },
+      // { path: "/dashboard/forbidden-access", element: <Forbidden /> },
       {
         path: "/dashboard/payment-history",
-        element: (
-          <PrivateRoute>
-            <PaymentHistory />
-          </PrivateRoute>
-        ),
+        element: <PaymentHistory />,
       },
       {
         path: "/dashboard/user-management",
         element: (
-          <PrivateRoute>
+          <AdminRoutes>
             <UserManagement />
-          </PrivateRoute>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/approve-riders",
+        element: (
+          <AdminRoutes>
+            <ApproveRiders />
+          </AdminRoutes>
         ),
       },
     ],
