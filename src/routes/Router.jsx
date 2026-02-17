@@ -21,12 +21,14 @@ import UserManagement from "../pages/dashboard/User Management/UserManagement";
 import AdminRoutes from "./AdminRoutes";
 import AssignRiders from "../pages/dashboard/Assign Riders/AssignRiders";
 import Contact from "../pages/contact/Contact";
-// import Forbidden from "../components/Forbidden";
+import Forbidden from "../components/Forbidden";
+import About from "../pages/about/About";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <Forbidden />,
     children: [
       {
         index: true,
@@ -58,6 +60,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/about-us",
+        element: <About />,
       },
     ],
   },
