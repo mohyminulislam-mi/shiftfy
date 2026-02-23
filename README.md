@@ -1,16 +1,43 @@
-# React + Vite
+## 🚚 Zap-Shift | Real-Time Delivery & Logistics Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zap-Shift is a high-performance logistics ecosystem designed to streamline the connection between businesses, riders, and customers. By leveraging real-time geospatial data, the platform provides live tracking and intelligent dispatching to solve last-mile delivery challenges.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✔️ Triple-Interface System: Unique dashboards and views for Admins, Riders, and Customers.
+✔️ Live Geospatial Tracking: Real-time map movement using Leaflet and React-Leaflet for precise order monitoring.
+✔️ Intelligent Dispatch: Admin system that assigns orders to the nearest available rider based on proximity.
+✔️ Data Analytics: Interactive delivery performance charts and order statistics powered by Recharts.
+✔️ Role-Based Access: Secure authentication via Firebase ensuring users only see relevant data.
+✔️ Optimized Performance: Fast data fetching and synchronization using TanStack Query.
+✔️ Responsive UI: Modern, mobile-first design built with Tailwind CSS v4.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Frontend:
+Framework: React 19 (Vite)
+Styling: Tailwind CSS v4
+State Management: TanStack Query (React Query)
+Maps: Leaflet & React-Leaflet
+Forms: React Hook Form
+Animations: React Lottie & Swiper
 
-## Expanding the ESLint configuration
+📦 Backend & Database:
+Runtime: Node.js & Express
+Database: MongoDB
+Authentication: Firebase Auth
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Challenges Overcome
+
+The primary technical hurdle was implementing real-time location synchronization without causing performance lag or excessive API calls.
+
+Solution: Used TanStack Query for efficient caching and optimized Leaflet markers to update only when coordinates changed, significantly reducing re-renders.
+
+Logic: Developed a custom algorithm on the backend to calculate the "Nearest Rider" using geographic coordinates, ensuring efficient order distribution.
+
+🤝 Contact
+
+Mohyminul Islam
+
+LinkedIn: https://www.linkedin.com/in/mohyminulislam/
+Portfolio: https://mohyminulislam.vercel.app/
