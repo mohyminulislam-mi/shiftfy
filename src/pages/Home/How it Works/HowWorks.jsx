@@ -32,9 +32,8 @@ const HowWorks = () => {
   return (
     <section className="max-w-7xl mx-auto py-16 px-4">
       <div className="text-center mb-12">
-        <h2 className="text-primary font-medium tracking-widest uppercase text-sm mb-2">Workflow</h2>
+        <h2 className="font-medium uppercase text-sm mb-2">Workflow</h2>
         <h1 className="text-secondary font-extrabold text-4xl">How It's Works</h1>
-        <div className="h-1 w-20 bg-primary mx-auto mt-4 rounded-full"></div>
       </div>
 
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">

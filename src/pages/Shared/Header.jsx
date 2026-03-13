@@ -13,7 +13,7 @@ const Header = () => {
       .then((result) => {
         console.log(result);
         toast.success("Logout successful");
-        setUser(null)
+        setUser(null);
       })
       .catch((error) => {
         console.log(error);
@@ -23,29 +23,33 @@ const Header = () => {
   const links = (
     <>
       <li>
-        <NavLink to={"/services"}>Services</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/coverage"}>Coverage</NavLink>
+        <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
         <NavLink to={"/about-us"}>About Us</NavLink>
       </li>
       <li>
-        <NavLink to={"/pricing"}>Pricing</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/blogs"}>Blog</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/contact"}>Contact</NavLink>
+        <NavLink to={"/services"}>Services</NavLink>
       </li>
       <li>
         <NavLink to={"/send-parcel"}>Send Parcel</NavLink>
       </li>
       <li>
-        <NavLink to={"/dashboard"}>dashboard</NavLink>
+        <NavLink to={"/coverage"}>Coverage</NavLink>
       </li>
+      <li>
+        <NavLink to={"/pricing"}>Pricing</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/contact"}>Contact</NavLink>
+      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -81,7 +85,9 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold text-medium">{links}</ul>
+        <ul className="menu menu-horizontal px-1 font-semibold text-medium">
+          {links}
+        </ul>
       </div>
       <div className="navbar-end flex gap-2">
         {user ? (
