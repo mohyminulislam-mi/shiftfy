@@ -1,71 +1,63 @@
 import React from "react";
-import serviceIcon from "../../../assets/service.png";
+import { Clock, CreditCard, Map, Truck } from "lucide-react";
 
 const OurServices = () => {
   const ServiceData = [
     {
-      icon: <img src={serviceIcon} alt="service image" />,
-      title: "Express & Standard Delivery",
+      id: 1,
+      icon: Clock,
+      title: "Same Day Delivery",
       description:
-        "We deliver parcels within 24–72 hours in Dhaka, Chittagong, Sylhet, Khulna, and Rajshahi. Express delivery available in Dhaka within 4–6 hours from pick-up to drop-off.",
+        "Need it today? We've got you covered with lightning speed local delivery.",
     },
     {
-      icon: <img src={serviceIcon} alt="service image" />,
+      id: 2,
+      icon: CreditCard,
+      title: "Cash on Delivery",
+      description:
+        "Safe and reliable payment collection for your customers upon arrival.",
+    },
+    {
+      id: 3,
+      icon: Truck,
       title: "Nationwide Delivery",
       description:
-        "We deliver parcels nationwide with home delivery in every district, ensuring your products reach customers within 48–72 hours.",
+        "Sending items across the country? Our inter-city network is unmatched.",
     },
     {
-      icon: <img src={serviceIcon} alt="service image" />,
-      title: "Fulfillment Solution",
+      id: 4,
+      icon: Map,
+      title: "Real-time Tracking",
       description:
-        "We also offer customized service with inventory management support, online order processing, packaging, and after sales support.",
-    },
-    {
-      icon: <img src={serviceIcon} alt="service image" />,
-      title: "Cash on Home Delivery",
-      description:
-        "100% cash on delivery anywhere in Bangladesh with guaranteed safety of your product.",
-    },
-    {
-      icon: <img src={serviceIcon} alt="service image" />,
-      title: "Corporate Service / Contract In Logistics",
-      description:
-        "Customized corporate services which includes warehouse and inventory management support.",
-    },
-    {
-      icon: <img src={serviceIcon} alt="service image" />,
-      title: "Parcel Return",
-      description:
-        "Through our reverse logistics facility we allow end customers to return or exchange their products with online business merchants.",
+        "Always know exactly where your package is with live GPS tracking updates.",
     },
   ];
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6 py-8">
+    <section className="max-w-6xl mx-auto space-y-6 py-15">
       <div className="text-center lg:px-52 px-10">
-        <h1 className="font-bold text-4xl text-white">Our Services</h1>
-        <p className="text-gray-300 my-4">
+        <h1 className="font-bold text-4xl text-secondary">Our Services</h1>
+        <p className="text-gray-400 my-4">
           Enjoy fast, reliable parcel delivery with real-time tracking and zero
           hassle. From personal packages to business shipments — we deliver on
           time, every time.
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 items-center">
-        {ServiceData.map((service, index) => (
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 items-center">
+        {ServiceData.map((service) => (
           <div
-            key={index}
-            className="flex flex-col items-center bg-white rounded-xl p-4.5 h-[250px] shadow-sm hover:shadow-md transition-shadow"
+            key={service.id}
+            class="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center border border-slate-100 shadow-sm hover:-translate-y-1 transition-transform"
           >
-            <span className="text-4xl mt-2">{service.icon}</span>
-            <h1 className="my-4 font-bold text-lg">{service.title}</h1>
-            <p className="text-center text-gray-600 text-sm px-2">
-              {service.description}
-            </p>
+            <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-6">
+              <service.icon size={32} />
+            </div>
+            <h4 class="font-bold text-slate-800 text-lg">{service.title}</h4>
+            <p class="mt-2 text-slate-500 text-sm">{service.description}</p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
