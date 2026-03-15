@@ -22,7 +22,7 @@ const Hero = () => {
           </div>
         </Carousel>
       </div>
-      <div className="absolute bottom-20 lg:bottom-36 lg:left-20 flex gap-3">
+      <div className="absolute bottom-5 lg:bottom-20 left-3 lg:left-20 flex gap-3">
         <Link
           to={"/login"}
           className="btn btn-outline outline-primary font-bold hover:bg-primary hover:text-secondary"

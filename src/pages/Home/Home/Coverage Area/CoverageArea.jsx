@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const CoverageArea = () => {
   return (
-    <section class="px-5 py-24 md:py-32">
+    <section class="px-5 py-8">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
