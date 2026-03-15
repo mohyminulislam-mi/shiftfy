@@ -8,12 +8,14 @@ import Loading from '../../../Loading/Loading'
 import ServiceFeatures from "../ServiceFeatures/ServiceFeatures";
 import Merchant from "../Merchant/Merchant";
 import FAQ from "../FAQ/FAQ";
+import CoverageArea from "./Coverage Area/CoverageArea";
 
 const reviewsPromise = fetch('/reviews.json').then(res => res.json())
 const Home = () => {
   return (
     <div>
       <Hero />
+      <CoverageArea />
       <div className="my-15"><HowWorks /></div>
       <div className="py-8 bg-secondary rounded-2xl"><OurServices /></div>
       <div className="my-15"><Brands /></div>
